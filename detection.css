@@ -1,0 +1,25 @@
+/* Import the 'Poppins' font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+/* Apply styles to all elements on the page */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif; /* Use the 'Poppins' font for all text */
+}
+
+/* Style the entire body of the page */
+body {
+  display: flex;
+  justify-content: center; /* Horizontally center content */
+  align-items: center; /* Vertically center content */
+  min-height: 100vh; /* Set minimum height to fill the viewport */
+  background: #222; /* Background color for the entire page */
+}
+
+/* Style the container element */
+.container {
+  position: relative; /* Set the position context for contained elements */
+  width: 400; /* Set the width of the container (missing 'px' unit) */
+}

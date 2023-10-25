@@ -1,0 +1,186 @@
+/* Style the container element */
+.container {
+  position: relative; /* Set the position context for contained elements */
+  width: 270px; /* Set the width of the container */
+  padding: 30px; /* Add padding around the container */
+  background: #8d8d8d; /* Background color of the container */
+  display: flex; /* Use flex display for child elements positioning */
+  justify-content: center; /* Horizontally center child elements */
+  flex-direction: column; /* Arrange child elements in a column */
+  border: 1px solid #8f8f8f; /* Add a border around the container */
+  gap: 10px; /* Add spacing between child elements */
+}
+
+/* Style the heading inside the container */
+.container h2 {
+  color: #881a1a; /* Set text color */
+  font-weight: 700; /* Set font weight */
+}
+
+/* Style the input box container */
+.container .inputBox {
+  position: relative; /* Set position context for contained elements */
+}
+
+/* Style the input field */
+.container .inputBox input {
+  width: 90%; /* Set the input field width to 100% of the container */
+  background: #222; /* Set background color of the input field */
+  border: none; /* Remove borders */
+  outline: none; /* Remove outline on focus */
+  padding: 10px; /* Add padding to the input field */
+  color: #fff; /* Set text color */
+  font-size: 1.1em; /* Set font size */
+}
+
+/* Style the show password button container */
+.container .showPassword {
+  position: absolute; /* Set position context for absolute positioning */
+  top: 0; /* Position at the top of the container */
+  right: 0; /* Position at the right of the container */
+}
+
+/* Style the show password button */
+.container .showPassword .showButton {
+  display: block; /* Display as a block element */
+  width: 60px; /* Set width */
+  height: 100%; /* Set height to cover the container */
+  background: #333; /* Set background color */
+  border: 1px solid #222; /* Add a border */
+  cursor: pointer; /* Show pointer cursor on hover */
+  text-align: center; /* Center the text horizontally */
+  color: #fff; /* Set text color */
+  font-size: 0.8em; /* Set font size */
+  line-height: 31px; /* Set line height for vertical centering */
+  text-transform: uppercase; /* Convert text to uppercase */
+  transition: background-color 0.3s; /* Add transition effect */
+}
+
+/* Change background color of show password button on hover */
+.container .showPassword .showButton:hover {
+  background-color: #555;
+}
+
+/* Style the password strength meter container */
+.container .strengthMeter {
+  position: relative; /* Set position context for contained elements */
+  width: 100%; /* Set width to 100% */
+  height: 30px; /* Set height */
+}
+
+/* Style the password strength label */
+.container .strengthMeter .strengthLabel {
+  color: #0a0dd0; /* Set text color */
+  font-size: 0.9em; /* Set font size */
+  margin-bottom: 5px; /* Add margin at the bottom */
+}
+
+/* Style the password strength progress bar container */
+.container .strengthMeter .progressBar {
+  position: relative; /* Set position context for contained elements */
+  width: 100%; /* Set width to 100% */
+  height: 10px; /* Set height */
+  background: #555; /* Set background color */
+  border-radius: 5px; /* Add border radius */
+  overflow: hidden; /* Hide overflowing content */
+}
+
+/* Style the password strength progress bar */
+.container .strengthMeter .progressBar .progress {
+  width: 0%; /* Initialize progress width to 0% */
+  height: 100%; /* Set height to 100% */
+  border-radius: 5px; /* Add border radius */
+  transition: width 0.5s; /* Add transition effect to width change */
+}
+
+/* Style the progress bar for weak password strength */
+.container .strengthMeter .progressBar .weak {
+  background: linear-gradient(to right, #f00, #f00); /* Apply gradient background */
+}
+
+/* Style the progress bar for medium password strength */
+.container .strengthMeter .progressBar .medium {
+  background: linear-gradient(to right, #ffa500, #ffa500); /* Apply gradient background */
+}
+
+/* Style the progress bar for strong password strength */
+.container .strengthMeter .progressBar .strong {
+  background: linear-gradient(to right, #0f0, #0f0); /* Apply gradient background */
+}
+
+/* Style the password strength text */
+.container .strengthMeter .strengthText {
+  position: absolute; /* Set position context for absolute positioning */
+  top: 50%; /* Position at the vertical center of the container */
+  right: 10px; /* Position at the right of the container */
+  transform: translateY(-50%); /* Vertically center the element */
+  color: #fff; /* Set text color */
+  font-size: 0.9em; /* Set font size */
+  text-transform: uppercase; /* Convert text to uppercase */
+  font-weight: bold; /* Set font weight */
+}
+
+/* 
+section.generated-password {
+  position: relative;
+  display: flex;
+  align-items: center;
+  input, button {
+    font-family: sans-serif;
+    font-weight: 500;
+    height: 3rem;
+  }
+  input {
+    width: 100%;
+    border-radius: .5rem 0 0 .5rem;
+    border: 1px solid $light-gray$;
+    border-right: none;
+    background-color: $lighter-gray$;
+    padding: .5rem .5rem .5rem 1rem;
+    font-size: 1rem;
+    color: $text-darker;
+    putline: none;
+  }
+  button {
+    height: 3rem;
+    width: 4rem;
+    display: flex;
+    align-items: center;
+    border: 1px solid $light-gray;
+    border-radius: 0 .5rem .5rem 0;
+    background-color: transparent;
+    cursor: pointer;
+    color: $text-darker;
+    transition: background-color .3s ease;
+    &:hover {
+      background-color: $lighter-gray;
+    }
+  }
+  .confirmation {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 100%;
+    width: 100%;
+    background-color: $white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+    pointer-events: none;
+    opacity:0;
+    transition; all .1s ease;
+    p {
+      transform: scale(.2);
+      transition: transform .3s ease;
+    } 
+    &.active {
+      pointer-event: all;
+      opacity: 1;
+      p {
+        transform: scale(1.1);
+      }
+    }
+  }
+*/
