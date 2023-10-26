@@ -1,30 +1,56 @@
 
+//const check = require('./demo2.js');
+
 console.log ("Hello from popup.js")
 
-// fetch('common_passwords.txt')
-//   .then(response => response.text())
-//   .then(commonPasswordsText => {
-//     const commonPasswordsList = commonPasswordsText.split('\n');
-//     // commonPasswordsList now contains an array of common passwords
-//   })
-//   .catch(error => console.error('Error reading the common password list:', error));
 
+let fileContent;
 
-
-
-//   const userPassword = 'user123'; // Replace this with the user's password
-//   if (commonPasswordsList.includes(userPassword)) {
-//     console.log('Password is common. Please choose a more secure password.');
-//   } else {
-//     console.log('Password is not common. It is secure.');
-//   }
-  
-
-
+fetch('10k-most-common.txt')
+  .then(response => response.text())
+  .then(data => {
+    fileContent = data;
+   //console.log(fileContent);
+  })
+  .catch(error => console.error('Error reading the file:', error));
 
 
 let bgpage= chrome.extension.getBackgroundPage();
 let password = bgpage.pwd;
+
+// Function to search for a string in a file
+function searchForStringInFile(file, searchString) {
+  const reader = new FileReader();
+
+  console.log (searchString)
+  console.log ("mo ladannnnn")
+  reader.onload = function (event) {
+    const fileContents = event.target.result;
+    if (fileContents.includes(searchString)) {
+      console.log("true")
+      return true; // String found, return true
+    } else {
+      console.log("false")
+      return false; // String not found, return false
+    }
+  };
+
+  reader.onerror = function (event) {
+    callback('Error reading the file: ' + event.target.error);
+  };
+
+  reader.readAsText(file);
+}
+
+
+
+
+// Create a File object representing the text file
+const textFile = new File([fileContent], 'example.txt', {
+  type: 'text/plain'
+});
+  
+
 
 // Function to validate password against a set of requirements
 function validatePassword(password) {
@@ -48,8 +74,13 @@ function validatePassword(password) {
     {
       label: 'At least 1 special symbol',
       isValid: /[!@#$%^&*`~()'"<>?/{}|]/.test(password) // Check if password contains at least one special symbol
-    }
+    },
 
+    {
+      label: 'No presence of common word',
+      isValid: searchForStringInFile(textFile, "ashiv")
+    },
+      console.log(searchForStringInFile(textFile, "batman"))
 
   ];
 
@@ -92,11 +123,18 @@ let container = document.querySelector('.container');
 
 document.addEventListener("keyup", function(e) {
   try {
+
+
+    console.log ("Hello from try ")
+
     
     let password = document.querySelector('#myPassword').value;
     let passwordError = document.getElementById('passwordError');
+    console.log (password)
+    let defaultSearchString = password
     let passwordValidation = validatePassword(password);
     
+  
     if (!passwordValidation.isValid) {
       passwordError.textContent = 'Password Requirements:';
       container.classList.remove('weak', 'medium', 'strong');

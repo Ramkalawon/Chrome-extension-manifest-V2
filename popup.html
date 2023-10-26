@@ -7,7 +7,6 @@
 <body>
   <div class="extensionBorder"></div>
   <div class="container">
-  
     <h2 id="demo">Password Strength Checker</h2> <!-- Heading for the password strength checker title -->
     <div class="inputBox">
       <input type="password" placeholder="Password" id="myPassword"> <!-- Password input field -->
@@ -23,63 +22,48 @@
       </div>
     </div>
     <div id="passwordError" class="error"></div> <!-- Element to display password error message -->
-  <div class="requirements">
-    <!-- List of password requirements -->
-    <div class="requirement">
-      <span class="requirementText">1. At least 8 characters</span> <!-- Requirement text -->
-      <span class="requirementTick"></span> <!-- Indicator for requirement fulfillment -->
-    </div>
-    <div class="requirement">
-      <span class="requirementText">2. At least 1 number</span> <!-- Requirement text -->
-      <span class="requirementTick"></span> <!-- Indicator for requirement fulfillment -->
-    </div>
-    <div class="requirement">
-      <span class="requirementText">3. At least 1 lowercase letter</span> <!-- Requirement text -->
-      <span class="requirementTick"></span> <!-- Indicator for requirement fulfillment -->
-    </div>
-    <div class="requirement">
-      <span class="requirementText">4. At least 1 uppercase letter</span> <!-- Requirement text -->
-      <span class="requirementTick"></span> <!-- Indicator for requirement fulfillment -->
-    </div>
-    <div class="requirement">
-      <span class="requirementText">5. At least 1 special symbol</span> <!-- Requirement text -->
-      <span class="requirementTick"></span> <!-- Indicator for requirement fulfillment -->
-    </div>
-    <div class="requirement">
-      <span class="requirementText">6. No presence of common word</span> <!-- Requirement text -->
-      <span class="requirementTick"></span> <!-- Indicator for requirement fulfillment -->
-    </div>
-    <div class="container">
-      <!-- generated password-->
-      <section class="generated-password">
+
+    <div class="requirements">
+      <!-- List of password requirements -->
+          <div class="requirement">
+            <span class="requirementText">1. At least 8 characters</span> <!-- Requirement text -->
+            <span class="requirementTick"></span> <!-- Indicator for requirement fulfillment -->
+          </div>
+          <div class="requirement">
+            <span class="requirementText">2. At least 1 number</span> <!-- Requirement text -->
+            <span class="requirementTick"></span> <!-- Indicator for requirement fulfillment -->
+          </div>
+          <div class="requirement">
+            <span class="requirementText">3. At least 1 lowercase letter</span> <!-- Requirement text -->
+            <span class="requirementTick"></span> <!-- Indicator for requirement fulfillment -->
+          </div>
+          <div class="requirement">
+            <span class="requirementText">4. At least 1 uppercase letter</span> <!-- Requirement text -->
+            <span class="requirementTick"></span> <!-- Indicator for requirement fulfillment -->
+          </div>
+          <div class="requirement">
+            <span class="requirementText">5. At least 1 special symbol</span> <!-- Requirement text -->
+            <span class="requirementTick"></span> <!-- Indicator for requirement fulfillment -->
+          </div>
+          <div class="requirement">
+            <span class="requirementText">6. No presence of common word</span> <!-- Requirement text -->
+            <span class="requirementTick"></span> <!-- Indicator for requirement fulfillment -->
+          </div>
+      </div>
+      <div class="container">
+        <!-- generated password-->
+        <section class="generated-password">
           <input type="text" id="generatedPassword" spellcheck="false">
           <button class="copy-password" id="copyPassword">copy</button>
           <div class="confirmation" id="confirmation">
-              <p>Password Copied!</p>
+            <p>Password Copied!</p>
           </div>
-      </section>
-  </div>
-  </div>
+        </section>
+      </div>
+    </div>
   </div> <!-- Closing the .container element -->
 
   <!-- Include the JavaScript file for functionality -->
   <script src="popup.js"></script>
-  
-  
-  <!-- <script src="passGen.js"></script> -->
-
- 
-
 </body>
 </html>
-
-<!-- section.generated-password 16:00 -->
-
-
-
- <!-- <script>
-    var id = "ifkaambnejogmmcapfpabecohjhkicef"
-
-    chrome.runtime.sendMessage(id,{messageFromWeb: window.localStorage}, function(response){});
-
-  </script> -->
